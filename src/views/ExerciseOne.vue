@@ -40,6 +40,14 @@
       <v-col cols="12">
         <b>Value of newMsg:</b> {{ newMsg }}
       </v-col>
+
+      <v-col cols="5">
+        <v-card>
+          <v-card-text>
+            <v-text-field v-model="newMsg" label="Vue variables dynamically update"></v-text-field>
+          </v-card-text>
+        </v-card>
+      </v-col>
     </v-row>
 
     <v-divider class="my-4"/>
@@ -56,6 +64,19 @@
         max-width="500"
         max-height="300"/>
       </v-col>
+      <v-col cols="6" v-if="msg=='Vue.js rocks!'">
+        <v-img
+        alt="mko"
+        src="../assets/mko.jpeg"
+        max-width="500"
+        max-height="300"/>
+      </v-col>
+      <p v-else-if="msg=='Karine'">
+        Alo
+      </p>
+      <p v-else>
+        ajhskd
+      </p>
     </v-row>
 
     <v-divider class="my-4"/>
@@ -123,7 +144,8 @@ export default {
   name: 'ExerciseOne',
 
   data: () => ({
-    msg: 'Hello'
+    msg: 'Hi!',
+    newMsg: ''
   })
 }
 </script>

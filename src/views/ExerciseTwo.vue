@@ -17,7 +17,8 @@
         to the column below.
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Counter :color="color"/>
+        <Counter :color="color"/>
       </v-col>
     </v-row>
 
@@ -54,8 +55,8 @@
         that button below with text between the opening and closing tags.
         <a href="https://vuejs.org/v2/guide/components-slots.html" target="_blank">For reference</a>
       </v-col>
-      <v-col cols="12">
-        <!-- Your code here -->
+      <v-col cols="6">
+        <v-select :items="colors" v-model = "color" label="Select"></v-select>
       </v-col>
     </v-row>
 
@@ -69,7 +70,7 @@
         <a href="https://vuetifyjs.com/en/components/selects" target="_blank">For reference</a>
       </v-col>
       <v-col cols="12">
-        <!-- Your code here -->
+        <Counter :color = "color"/>
       </v-col>
     </v-row>
 
@@ -111,10 +112,20 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+import Counter from '../components/Counter.vue'
 export default {
   name: 'ExerciseTwo',
-
   data: () => ({
-  })
+    colors: [
+      { text: 'Red', value: 'red' },
+      { text: 'Green', value: 'green' }
+    ],
+    color: null
+  }),
+
+  components: {
+    Counter
+  }
 }
 </script>
